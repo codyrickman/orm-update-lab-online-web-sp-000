@@ -33,9 +33,9 @@ class Student
 
   def save
     sql = <<-SQL
-          SELECT * from students WHERE name=?
+          SELECT * from students WHERE id=?
           SQL
-    rows = DB[:conn].execute(sql, @name)
+    rows = DB[:conn].execute(sql, @id)
     if (rows.count != 0)
       sql = <<-SQL
             UPDATE students SET name=?, grade=? WHERE id=?
