@@ -67,7 +67,7 @@ def self.find_by_name(name)
 end
 
 def self.new_from_db(row)
-  student = Student.new(row[0][1], row[0][2], row[0][0])
+  student = Student.new(row[1], row[2], row[0])
   return student
 end
 
