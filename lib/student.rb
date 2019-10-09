@@ -37,7 +37,10 @@ class Student
           SQL
     rows = DB[:conn].execute(sql, @name)
     if (rows.count != 0)
-
+      sql = <<-SQL
+            UPDATE students SET name=?, grade=? WHERE id=?
+            SQL
+      DB[:conn].execute(sql, @name, @grade, @id)
     else
       sql = <<-SQL
             INSERT INTO students (name, grade) VALUES (?,?)
