@@ -57,7 +57,7 @@ def self.new_from_db
 
 end
 
-def find_by_name(name)
+def self.find_by_name(name)
   sql = <<-SQL
         SELECT * from students WHERE name=?
         SQL
