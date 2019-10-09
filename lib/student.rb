@@ -62,7 +62,7 @@ def self.find_by_name(name)
         SELECT * from students WHERE name=?
         SQL
   rows = DB[:conn].execute(sql, name)
-  student = student.new(rows[0][1], rows[0][2], rows[0][0])
+  student = Student.new(rows[0][1], rows[0][2], rows[0][0])
   return student
 end
 
